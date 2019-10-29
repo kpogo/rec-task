@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const MenuButton = ({ onToggle, opened }) => {
   return (
@@ -8,6 +9,11 @@ const MenuButton = ({ onToggle, opened }) => {
       <div className="btn-line"></div>
     </div>
   );
+};
+
+MenuButton.propTypes = {
+  onToggle: PropTypes.func.isRequired,
+  opened: PropTypes.bool.isRequired
 };
 
 export default MenuButton;

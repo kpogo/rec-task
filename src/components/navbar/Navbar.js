@@ -9,8 +9,10 @@ const Navbar = () => {
   const needsMenu = ['Car financig', 'Debt reunification', 'Home improvemnt'];
   const blogsMenu = ['Improve my finance', 'Day to day money', 'Wealth'];
 
-  //Toogle menu button on mobile
+  //State of mobile menu button - used to toggle button and define if menu should be displayed
   const [toggleShow, setToggleShow] = useState(false);
+
+  //Change the above state
   const toogleShowMenu = () => {
     setToggleShow(!toggleShow);
   };

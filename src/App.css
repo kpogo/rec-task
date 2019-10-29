@@ -1,7 +1,8 @@
 /* * * * CONTENT * * * */
 /* 1 General Style */
 /* 2 Small to Medium */
-/* 3 Medium to large  */
+/* 3 Medium */
+/* 4 Medium to large  */
 
 /*----------------------------------------------------------------- 1 General Style ----------------------------------------------------- */
 * {
@@ -25,12 +26,7 @@ a {
 ul {
   list-style: none;
 }
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-}
+
 .mr-1 {
   margin-right: 0.5rem;
 }
@@ -42,6 +38,51 @@ ul {
 }
 .ml-2 {
   margin-left: 1rem;
+}
+.hg-100 {
+  height: 100%;
+}
+.hg-0 {
+  height: 0;
+}
+.text-focused {
+  color: #783292;
+}
+.text-dim {
+  color: #12121240;
+}
+.text-success {
+  color: #00aa28;
+}
+.text-danger {
+  color: #d50000;
+}
+
+.btn {
+  display: block;
+  margin: 2rem auto 0 auto;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  transition: all 0.25s ease-in-out;
+  font-weight: 800;
+  letter-spacing: 1px;
+  box-shadow: 1px 2px 5px 0px #12121230;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+}
+
+.btn-success {
+  background-color: #068524;
+  color: #f8f9fa;
+}
+
+.btn-disabled {
+  opacity: 0.5;
+}
+
+.btn-success:hover {
+  background: #08ac2f;
 }
 
 /*--------------------------------------------------------------------------- 2 Small to Medium -----------------------------------------------------------------------*/
@@ -56,6 +97,7 @@ ul {
     align-items: center;
     background: #783292;
     box-shadow: 0 3px 8px #12121241;
+    z-index: 10;
   }
 
   /********* NAV MENU LG ********/
@@ -76,6 +118,7 @@ ul {
     top: 100%;
     left: 0;
     flex-direction: column;
+    background-color: rgba(245, 245, 245, 0.89);
   }
   .navbar .navbar-menu-small .navbar-item {
     width: 100%;
@@ -123,6 +166,108 @@ ul {
     color: whitesmoke;
   }
 
+  /* CONTAINER*/
+  .container {
+    width: 100%;
+    display: flex;
+    padding: 6rem 2.5%;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+  /***** Register Form ******/
+  .form-card {
+    width: 100%;
+    box-shadow: 2px 3px 8px 0px #12121241;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin: auto;
+  }
+  .form-card-header {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    background: #783292;
+    color: whitesmoke;
+    letter-spacing: 2px;
+  }
+  .form {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .input-field-wrapper {
+    width: 80%;
+    position: relative;
+    margin: 1rem auto;
+  }
+  .input-field-icons {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    align-items: center;
+  }
+  .input-field-icons i {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+  .input-field[type='text'],
+  .input-field[type='email'],
+  .input-field[type='password'] {
+    width: 80%;
+    margin: auto;
+    height: 2rem;
+    position: relative;
+    display: flex;
+    align-content: center;
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    font-family: 'Roboto', sans-serif;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 2px #78329220;
+    z-index: 2;
+    transition: all 0.375s ease-in-out;
+  }
+
+  .input-field[type='text']:focus,
+  .input-field[type='email']:focus,
+  .input-field[type='password']:focus {
+    outline: none;
+    border-bottom: solid 2px #783292e7;
+  }
+
+  .input-field[type='password']:-webkit-autofill,
+  .input-field[type='text']:-webkit-autofill,
+  .input-field[type='email']:-webkit-autofill {
+    box-shadow: inset 0 0 0 1000px #f5f3f3;
+  }
+  .input-warning {
+    width: 80%;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    margin: auto;
+    font-weight: 600;
+    font-style: italic;
+    transition: all 0.375s ease-in;
+  }
   /****** HAMBURGER MENU BTN ********/
   .btn-menu,
   .btn-menu-opened {
@@ -158,8 +303,9 @@ ul {
     transition: all 0.5s ease-out;
   }
 }
-/* ----------------------------------------------------------------- 3 Medium to large ------------------------------------------------------------ */
-@media only screen and (min-width: 769px) {
+
+/* ----------------------------------------------------------------- 3 Medium  --------------------------------------------------------------------- */
+@media (min-width: 769px) {
   /****** HAMBURGER MENU BTN ********/
   .btn-menu {
     display: none;
@@ -185,7 +331,7 @@ ul {
     flex-direction: row;
   }
   .navbar .navbar-menu-large .navbar-item {
-    width: 200px;
+    width: 180px;
     position: relative;
     padding: 1rem;
     text-align: center;
@@ -249,5 +395,227 @@ ul {
   }
   .navbar .navbar-menu-large .navbar-item .dropdown-menu-option:hover > a {
     color: whitesmoke;
+  }
+  /* CONTAINER */
+  .container {
+    width: 100%;
+    display: flex;
+    padding: 8rem 10%;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+  /***** Register Form ******/
+  .form-card {
+    width: 80%;
+    box-shadow: 2px 3px 8px 0px #12121241;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin: auto;
+  }
+  .form-card-header {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    background: #783292;
+    color: whitesmoke;
+    letter-spacing: 2px;
+  }
+  .form {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .input-field-wrapper {
+    width: 80%;
+    position: relative;
+    margin: 1rem auto;
+  }
+  .input-field-icons {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    align-items: center;
+  }
+  .input-field-icons i {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+  .input-field[type='text'],
+  .input-field[type='email'],
+  .input-field[type='password'] {
+    width: 80%;
+    margin: auto;
+    height: 2rem;
+    position: relative;
+    display: flex;
+    align-content: center;
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    font-family: 'Roboto', sans-serif;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 2px #78329220;
+    z-index: 2;
+    transition: all 0.375s ease-in-out;
+  }
+
+  .input-field[type='text']:focus,
+  .input-field[type='email']:focus,
+  .input-field[type='password']:focus {
+    outline: none;
+    border-bottom: solid 2px #783292e7;
+  }
+
+  .input-field[type='password']:-webkit-autofill,
+  .input-field[type='text']:-webkit-autofill,
+  .input-field[type='email']:-webkit-autofill {
+    box-shadow: inset 0 0 0 1000px #f5f3f3;
+  }
+  .input-warning {
+    width: 80%;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    margin: auto;
+    font-weight: 600;
+    font-style: italic;
+    transition: all 0.375s ease-in;
+  }
+}
+
+/* ----------------------------------------------------------------- 4 Medium to large ------------------------------------------------------------ */
+@media only screen and (min-width: 1201px) {
+  .navbar .navbar-menu-large .navbar-item {
+    width: 200px;
+    position: relative;
+    padding: 1rem;
+    text-align: center;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    transition: all 0.125s ease-in;
+    background: #783292;
+    color: whitesmoke;
+    font-weight: 600;
+    cursor: default;
+  }
+
+  /* CONTAINER */
+  .container {
+    width: 100%;
+    display: flex;
+    padding: 10rem 25%;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+  /***** Register Form ******/
+  .form-card {
+    width: 70%;
+    box-shadow: 2px 3px 8px 0px #12121241;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin: auto;
+  }
+  .form-card-header {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    background: #783292;
+    color: whitesmoke;
+    letter-spacing: 2px;
+  }
+  .form {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .input-field-wrapper {
+    width: 80%;
+    position: relative;
+    margin: 1rem auto;
+  }
+  .input-field-icons {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    align-items: center;
+  }
+  .input-field-icons i {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+  .input-field[type='text'],
+  .input-field[type='email'],
+  .input-field[type='password'] {
+    width: 80%;
+    margin: auto;
+    height: 2rem;
+    position: relative;
+    display: flex;
+    align-content: center;
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    font-family: 'Roboto', sans-serif;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 2px #78329220;
+    z-index: 2;
+    transition: all 0.375s ease-in-out;
+  }
+
+  .input-field[type='text']:focus,
+  .input-field[type='email']:focus,
+  .input-field[type='password']:focus {
+    outline: none;
+    border-bottom: solid 2px #783292e7;
+  }
+
+  .input-field[type='password']:-webkit-autofill,
+  .input-field[type='text']:-webkit-autofill,
+  .input-field[type='email']:-webkit-autofill {
+    box-shadow: inset 0 0 0 1000px #f5f3f3;
+  }
+  .input-warning {
+    width: 80%;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    margin: auto;
+    font-weight: 600;
+    font-style: italic;
+    transition: all 0.375s ease-in;
   }
 }

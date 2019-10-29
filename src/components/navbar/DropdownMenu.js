@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from 'uuid';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const DropdownMenu = ({ options }) => {
   return (
@@ -12,6 +13,10 @@ const DropdownMenu = ({ options }) => {
       ))}
     </ul>
   );
+};
+
+DropdownMenu.propTypes = {
+  options: PropTypes.array.isRequired
 };
 
 export default DropdownMenu;

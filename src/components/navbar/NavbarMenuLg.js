@@ -1,6 +1,7 @@
 import React from 'react';
 import DropdownMenu from './DropdownMenu';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const NavbarMenuLg = ({ products, need, blog }) => {
   return (
@@ -22,6 +23,12 @@ const NavbarMenuLg = ({ products, need, blog }) => {
       </li>
     </ul>
   );
+};
+
+NavbarMenuLg.propTypes = {
+  products: PropTypes.array.isRequired,
+  need: PropTypes.array.isRequired,
+  blog: PropTypes.array.isRequired
 };
 
 export default NavbarMenuLg;
